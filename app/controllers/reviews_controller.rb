@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
   # GET /reviews.json
   def index
     @reviews = Review.search(params[:search])
+    @mean = @reviews.average(:rating)
   end
 
   def result
