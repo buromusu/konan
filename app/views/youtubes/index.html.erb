@@ -1,0 +1,7 @@
+<% @movies.each do |movie| %>
+  <% first_movie_title = movie["snippet"]["title"] %>
+  <% first_movie_url = movie["id"]["videoId"] %>
+  <div><%= first_movie_title %></div>
+  <div><%= "https://www.youtube.com/watch?v=" + first_movie_url %></div>
+  <iframe src='https://www.youtube.com/embed/<%= movie["id"]["videoId"] %>?rel=0&autoplay=0' frameborder='0' allowfullscreen></iframe>
+<% end %>

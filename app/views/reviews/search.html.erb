@@ -1,0 +1,13 @@
+<div class="make-form">
+  <%= form_for(@query) do |f| %>
+    <div class="form-group url">
+      <%= f.label :url %>
+    </div>
+    <div class="form-group">
+      <%= f.text_area :url %>
+    </div>
+    <div class="button">
+      <%= f.submit "Create Article", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

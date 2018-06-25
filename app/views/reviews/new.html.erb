@@ -1,0 +1,22 @@
+<div class="make-form">
+  <%= form_for(@review) do |f| %>
+    <div class="form-group url">
+      <%= f.label :url %>
+    </div>
+    <div class="form-group">
+      <%= f.text_area :url %>
+    </div>
+    <div class="form-group" id="star">
+      <%= f.number_field :rating, in: 1..5 %>
+    </div>
+    <div class="form-group content">
+      <%= f.label :comment %>
+    </div>
+    <div class="form-group">
+      <%= f.text_area :comment %>
+    </div>
+    <div class="button">
+      <%= f.submit "Create Article", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

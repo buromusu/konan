@@ -1,0 +1,21 @@
+<% content = @movie.content %>
+<% value = @movie.value %>
+<% url = @movie.url %>
+<div>
+  <iframe src='https://www.youtube.com/embed/<%= url %>?rel=0&autoplay=0' frameborder='0' allowfullscreen></iframe>
+</div>
+<div class="star-rating" data-score= <%= value %> >
+</div>
+<div>
+  <%= content %>
+</div>
+
+<script>
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>

@@ -1,0 +1,15 @@
+<% content = @post.content %>
+  <div id="content">
+    <h2><%= content %></h2>
+  </div>
+  <% contents = content.split("") %>
+  <% if content.include?('バーロー') %>
+    <% i = content.index('バーロー') %>
+    <% (i..i+3).each do |j| %>
+      <% contents.delete_at(i) %>
+    <%end%>
+    <% contents.insert(i, "バーロー") %>
+  <%end%>
+  <!-- <% contents.each do |c| %>
+    <%= audio_tag("#{c}.mp3", autoplay: true) %>
+  <%end%> -->
